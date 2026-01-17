@@ -53,6 +53,8 @@
  /* HEADER                               */
  /* ------------------------------------ */
  .header {
+  min-height: 100px;
+  height: auto;
    display: flex;
    justify-content: space-between;
    align-items: center;
@@ -81,14 +83,13 @@
    transition: 0.3s;
  }
 
-   .logo img {
-   position: relative;
-   width:10rem;
-   height:10rem;
-   align-items: center;
-   top:15px;
-   
- }
+
+.logo img {
+  width: clamp(120px, 15vw, 160px);
+  height: auto;
+  top: 0;
+}
+  
 
  /* NAV DESKTOP */
    .nav-links {
@@ -157,16 +158,16 @@
  }
 
  .hero-title {
-   font-size: 3rem;
-   font-weight:800;
-   justify-content: center;
-   text-align: center;
-   margin-bottom: 20px;
-   line-height: 1.2;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight:800;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 1.2;
  }
 
   .hero-p {
-   font-size: 1.25rem;
+  font-size: clamp(1rem, 2.5vw, 1.25rem);
    margin-bottom: 15px;
    opacity: 0.9;
    color: #fff;
@@ -1705,13 +1706,13 @@ border-image: linear-gradient(
   
      /* 3. Ajuste CRÍTICO para que el menú aparezca */
      .nav-links {
+        width: 100%;
       display: none;
        /* Por defecto escondido */
        position: absolute;
        top: 100%;
        /* Aparece justo debajo del logo */
        left: 0;
-       width:50%;
        background-color: #ffffff;
        flex-direction: column;
        padding:10px 0;
@@ -1755,7 +1756,12 @@ border-image: linear-gradient(
    .section-title{
     font-size:22px;
     }
-.hero-content {
+
+      .hero{
+          padding-top: 160px;
+    min-height: auto;}
+
+        .hero-content {
   margin-top: 0;
   /* Forzamos a que no haya margen arriba */
 }
@@ -2133,6 +2139,30 @@ border-image: linear-gradient(
                  }
             
  } 
+
+@media (max-width: 480px) {
+
+  .header {
+    padding: 10px 20px;
+  }
+
+  .hero {
+    padding: 140px 20px 40px;
+    text-align: center;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+}
+
     
 /* Botón Flotante de WhatsApp */
 .whatsapp-float {
@@ -2185,4 +2215,5 @@ border-image: linear-gradient(
     }
 
     
+
 }
